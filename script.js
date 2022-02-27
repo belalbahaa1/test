@@ -1,5 +1,13 @@
+var userBtn = document.querySelector(".user-btn");
 var myBtn = document.querySelector(".my-btn");
 var stopBtn = document.querySelector(".my-btn_stop");
+var btn1 = document.getElementById("btn1");
+var btn2 = document.getElementById("btn2");
+var btn3 = document.getElementById("btn3");
+var btn4 = document.getElementById("btn4");
+var btn5 = document.getElementById("btn5");
+
+// ************************
 
 myBtn.onclick = () => {
   clear = setInterval(roll, 100);
@@ -53,6 +61,8 @@ let images = [
   "images/team39.png",
   "images/team40.png",
 ];
+
+let users = ["user1.jpg", "user2.jpg", "user3.jpg", "user4.jpg"];
 let dice = document.querySelectorAll("img");
 
 function roll() {
@@ -66,3 +76,41 @@ function roll() {
     roll();
   }
 }
+
+// **************************
+
+// btn1.onclick = () => {
+//   mido();
+// };
+
+// btn2.onclick = () => {
+//   zezo();
+// };
+
+// btn3.onclick = () => {
+//   abdo();
+// };
+
+// btn4.onclick = () => {
+//   bely();
+// };
+
+// btn5.onclick = () => {
+//   ahmed();
+// };
+
+// function mido() {
+//   document.querySelector("#user-1").setAttribute("src", users[0]);
+// }
+// function zezo() {
+//   document.querySelector("#user-1").setAttribute("src", users[1]);
+// }
+// function abdo() {
+//   document.querySelector("#user-1").setAttribute("src", users[2]);
+// }
+// function bely() {
+//   document.querySelector("#user-1").setAttribute("src", users[3]);
+// }
+// function ahmed() {
+//   document.querySelector("#user-1").setAttribute("src", users[4]);
+// }
