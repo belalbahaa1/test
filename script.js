@@ -1,76 +1,63 @@
 var userBtn = document.querySelector(".user-btn");
+var toggleBtn = document.querySelector(".toggle");
 var myBtn = document.querySelector(".my-btn");
 var stopBtn = document.querySelector(".my-btn_stop");
+
 var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
 var btn3 = document.getElementById("btn3");
 var btn4 = document.getElementById("btn4");
 var btn5 = document.getElementById("btn5");
+var btn6 = document.getElementById("btn6");
+var btn7 = document.getElementById("btn7");
+var btn8 = document.getElementById("btn8");
+var btn9 = document.getElementById("btn9");
+var btn10 = document.getElementById("btn10");
 
 // ************************
+var choose = "teams";
+toggleBtn.innerText = choose;
+toggleBtn.onclick = () => {
+  if (choose === "teams") {
+    choose = "nations";
+  } else {
+    choose = "teams";
+  }
+  console.log(choose);
+  toggleBtn.innerText = choose;
+};
 
 myBtn.onclick = () => {
-  clear = setInterval(roll, 100);
+  clear = setInterval(roll, 50);
   myBtn.classList.add("disable");
 };
 
 stopBtn.onclick = () => {
   clearInterval(clear);
+
   console.log("stop");
   myBtn.classList.remove("disable");
 };
 
-let images = [
-  "images/team1.png",
-  "images/team2.png",
-  "images/team3.png",
-  "images/team4.png",
-  "images/team5.png",
-  "images/team6.png",
-  "images/team7.png",
-  "images/team8.png",
-  "images/team9.png",
-  "images/team10.png",
-  "images/team11.png",
-  "images/team12.png",
-  "images/team13.png",
-  "images/team14.png",
-  "images/team15.png",
-  "images/team16.png",
-  "images/team17.png",
-  "images/team18.png",
-  "images/team19.png",
-  "images/team20.png",
-  "images/team21.png",
-  "images/team22.png",
-  "images/team23.png",
-  "images/team24.png",
-  "images/team25.png",
-  "images/team26.png",
-  "images/team27.png",
-  "images/team28.png",
-  "images/team29.png",
-  "images/team30.png",
-  "images/team31.png",
-  "images/team32.png",
-  "images/team34.png",
-  "images/team35.png",
-  "images/team36.png",
-  "images/team37.jpg",
-  "images/team38.png",
-  "images/team39.png",
-  "images/team40.png",
-];
-
-let users = ["user1.jpg", "user2.jpg", "user3.jpg", "user4.jpg"];
+let users = ["user1.jpg", "user2.jpg", "user3.jpg", "user4.jpg", "user5.jpg"];
 let dice = document.querySelectorAll("img");
 
 function roll() {
-  let dieOneValue = Math.floor(Math.random() * 39);
-  let dieTwoValue = Math.floor(Math.random() * 39);
-  document.querySelector("#die-1").setAttribute("src", images[dieOneValue]);
-  document.querySelector("#die-2").setAttribute("src", images[dieTwoValue]);
+  let dieOneValue =
+    choose === "teams"
+      ? Math.floor(Math.random() * 84)
+      : Math.floor(Math.random() * 125);
+  let dieTwoValue =
+    choose === "teams"
+      ? Math.floor(Math.random() * 84)
+      : Math.floor(Math.random() * 125);
   console.log(dieOneValue, dieTwoValue);
+  document
+    .querySelector("#die-1")
+    .setAttribute("src", `images/${choose}/${dieOneValue}.png`);
+  document
+    .querySelector("#die-2")
+    .setAttribute("src", `images/${choose}/${dieTwoValue}.png`);
   if (dieOneValue == dieTwoValue) {
     console.log("return");
     roll();
@@ -79,38 +66,74 @@ function roll() {
 
 // **************************
 
-// btn1.onclick = () => {
-//   mido();
-// };
+btn1.onclick = () => {
+  mido();
+};
 
-// btn2.onclick = () => {
-//   zezo();
-// };
+btn2.onclick = () => {
+  zezo();
+};
 
-// btn3.onclick = () => {
-//   abdo();
-// };
+btn3.onclick = () => {
+  abdo();
+};
 
-// btn4.onclick = () => {
-//   bely();
-// };
+btn4.onclick = () => {
+  bely();
+};
 
-// btn5.onclick = () => {
-//   ahmed();
-// };
+btn5.onclick = () => {
+  ahmed();
+};
 
-// function mido() {
-//   document.querySelector("#user-1").setAttribute("src", users[0]);
-// }
-// function zezo() {
-//   document.querySelector("#user-1").setAttribute("src", users[1]);
-// }
-// function abdo() {
-//   document.querySelector("#user-1").setAttribute("src", users[2]);
-// }
-// function bely() {
-//   document.querySelector("#user-1").setAttribute("src", users[3]);
-// }
-// function ahmed() {
-//   document.querySelector("#user-1").setAttribute("src", users[4]);
-// }
+btn6.onclick = () => {
+  mido1();
+};
+
+btn7.onclick = () => {
+  zezo2();
+};
+
+btn8.onclick = () => {
+  abdo3();
+};
+
+btn9.onclick = () => {
+  bely4();
+};
+
+btn10.onclick = () => {
+  ahmed5();
+};
+
+function mido() {
+  document.querySelector("#user-1").setAttribute("src", users[0]);
+}
+function zezo() {
+  document.querySelector("#user-1").setAttribute("src", users[1]);
+}
+function abdo() {
+  document.querySelector("#user-1").setAttribute("src", users[2]);
+}
+function bely() {
+  document.querySelector("#user-1").setAttribute("src", users[3]);
+}
+function ahmed() {
+  document.querySelector("#user-1").setAttribute("src", users[4]);
+}
+
+function mido1() {
+  document.querySelector("#user-2").setAttribute("src", users[0]);
+}
+function zezo2() {
+  document.querySelector("#user-2").setAttribute("src", users[1]);
+}
+function abdo3() {
+  document.querySelector("#user-2").setAttribute("src", users[2]);
+}
+function bely4() {
+  document.querySelector("#user-2").setAttribute("src", users[3]);
+}
+function ahmed5() {
+  document.querySelector("#user-2").setAttribute("src", users[4]);
+}
